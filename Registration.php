@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,23 +22,27 @@
 		<main class="col-10 mx-auto tr text-center">
 			<div class="col-6 mx-auto border regis">
 				<form class="contact-form" action="Registration.php" method="post">
+					<h1>Register</h1>
+
+					<?php include('errors.php') ?>
+
 					<div class="form-group">
-						<input id="username" type="text"></label>
+						<input name="username" type="text" placeholder="Username :" required>
 					</div>
 
 					<div class="form-group">
-						<input id="email" type="email"></label>
+						<input name="email" type="email" placeholder="Email : " required>
 					</div>
 
 					<div class="form-group">
-						<input id="password_1" type="password"></label>
+						<input name="password_1" type="password" placeholder="Password : " required>
 					</div>
 
 					<div class="form-group">
-						<input id="password_2" type="password"> </label>
+						<input name="password_2" type="password" placeholder="Confirm Password : " required>
 					</div>
 
-					<button type="submit" cl>Submit</button>
+					<button type="submit" class="btn rounded-pill" name="reg_user">Submit</button>
 
 					<p>Already a user?<a href="Login.php"><b>Log in</b></a></p>
 				</form>

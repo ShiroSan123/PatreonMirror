@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,22 +21,19 @@
 
 		<main class="col-10 mx-auto tr text-center">
 			<div class="col-6 mx-auto border regis">
-				<form class="contact-form" action="registration.php" method="post">
+				<form class="contact-form" action="Login.php" method="post">
+					<h1>Log In</h1>
 					<div class="form-group">
-						<input id="username" type="text"></label>
+						<input name="username" type="text" placeholder="Username :" required>
 					</div>
 
 					<div class="form-group">
-						<input id="email" type="email"></label>
+						<input name="password_1" type="password" placeholder="Password : " required>
 					</div>
 
-					<div class="form-group">
-						<input id="password_1" type="password"></label>
-					</div>
+					<button type="submit" class="btn rounded-pill" name="login_user">Log In</button>
 
-					<button type="submit" cl>Log In</button>
-
-					<p>Not a user?<a href="Registration.php"><b>Register Her</b></a></p>
+					<p>Not a user?<a href="Registration.php"><b>Register Here</b></a></p>
 				</form>
 			</div>
 			

@@ -7,7 +7,6 @@
 		auto 
 		1fr 
 		auto;
-	border: 3px solid limegreen;
 }
 
 .regis {
@@ -25,6 +24,10 @@ input {
 input {
 	width: 25vw;
 	margin: 0.75rem;
+}
+
+.btn {
+	border: 1px solid black;
 }
 
 @media(min-width: 35em){
