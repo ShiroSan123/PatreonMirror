@@ -1,0 +1,37 @@
+.main-layout {
+	min-height: 100vh;
+	min-height: 100dvh;
+
+	display: grid;
+	grid-template-rows:
+		auto 
+		1fr 
+		auto;
+}
+
+.regis {
+	margin-top: 5vh;
+}
+
+input {
+	border-radius: 0.5rem;
+}
+
+.contact-form{
+	gap: 1.25rem;
+}
+
+input {
+	width: 25vw;
+	margin: 0.75rem;
+}
+
+.btn {
+	border: 1px solid black;
+}
+
+@media(min-width: 35em){
+	.contact-form {
+		grid-template-columns: 1fr 1fr;
+	}
+}
