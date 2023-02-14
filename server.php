@@ -37,7 +37,7 @@ if(isset($_POST['reg_user'])){
 	// Register user if no error
 	if(count($errors)==0){
 
-		$password = ($password_1);
+		$password = md5($password_1);
 		print $password;
 		$query = "INSERT INTO User (username,email,password) VALUES ('$username','$email','$password')";
 
@@ -63,7 +63,7 @@ if(isset($_POST['login_user'])){
 	}
 
 	if(count($errors) == 0) {
-		$password = ($password);
+		$password = md5($password);
 		$query = "SELECT * FROM User WHERE username = '$username' AND password = '$password' ";
 		$result = mysqli_query($db, $query);
 
