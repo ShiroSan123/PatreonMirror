@@ -19,7 +19,29 @@
 		</header>
 
 		<main class="col-10 mx-auto tr text-center">
-			<a href="Registration.php">Registration</a>
+			<div class="col-6 mx-auto border regis">
+				<form class="contact-form" action="Registration.php" method="post">
+					<div class="form-group">
+						<input id="username" type="text"></label>
+					</div>
+
+					<div class="form-group">
+						<input id="email" type="email"></label>
+					</div>
+
+					<div class="form-group">
+						<input id="password_1" type="password"></label>
+					</div>
+
+					<div class="form-group">
+						<input id="password_2" type="password"> </label>
+					</div>
+
+					<button type="submit" cl>Submit</button>
+
+					<p>Already a user?<a href="Login.php"><b>Log in</b></a></p>
+				</form>
+			</div>
 			
 		</main>
 
