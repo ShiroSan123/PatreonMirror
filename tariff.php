@@ -25,7 +25,7 @@ if(isset($_GET['logout'])){
 	<link rel="stylesheet" href="css/style.css?t=<?php echo(microtime(true).rand()); ?>" type="text/css" />
 </head>
 
-<body> 
+<body style="padding: 0;"> 
 	<nav class="border-bottom ">
 		<div class="nav-left">
 			<a href="index.php">
@@ -91,96 +91,38 @@ if(isset($_GET['logout'])){
 			</div>
 		</div>
 	</nav>
-	<div class="text-center">
-		<h1 class="mt-5">Находите любимых для себя авторов</h1>
-		<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
-		<h1>Найдите автора, который вам интересен</h1>
-		<div class="search-box mx-auto mt-4" style="background: #f2f2f2;">
-			<img src="images/search.png">
-			<input type="text" placeholder="Найти автора">
-		</div>
-		<h1 style="margin-top: 100px;">Что такое <span class="text-orange">Sky</span> Flow</h1>
-		<p class="col-4 mx-auto">Sky Flow - это платформа для авторов, которые хотят предоставлять доступ к своим работам по подписке и налаживать глубокую связь со своими поклонниками.</p>
-		<div class="col-10 mx-auto">
-			<div class="row skyflow">
-				<div class="col-6 text-center side2">
-					<img src="images/Left-side.svg" class="col-12">
-					<h1 class="mt-4">Мир, который создаёте вы</h1>
-					<h2 class="mx-auto mt-4 text500">Делитесь своими работами напрямую с преданными поклонниками, формируйте сообщество и получайте доход так, как это удобно вам.</h2>
-				</div>
-				<hr style="display: none;">
-				<div class="col-6 text-center side2">
-					<img src="images/Right-side.svg" class="col-12">
-					<h1 class="mt-4">Подписка, которая работает</h1>
-					<h2 class="mx-auto mt-4 text500">Делайте то, что вам нравится, с выгодой для себя и своих поклонников</h2>
-				</div>
+	<div class="main-tariff1">
+		<div class="row-tariff mx-auto">
+			<img src="images/tarif1.svg">
+			<div class="block-taf">
+				<h3>Sky Flow Lite</h3>
+				<h1>Только самое основное</h1>
+				<p>Простые инструменты для настройки регулярной поддержки от подписчиков и ведения бизнеса на основе подписки.</p>
+				<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
 			</div>
 		</div>
-		<h1 style="margin-top: 100px;">Кто использует Sky flow</h1>
-		<h2 class="col-4 mt-4 mx-auto text500">Patreon уже отрыл возможность обрести творческую и финансовую свободу сотням тысяч видеографов, авторов подкастов, музыкантов, писателей, геймеров и других авторов.</h2>
-	
-	<div class="tabs mx-auto x5carousel">
-		<div class="sub-header">
-		  	<div class="left mx-auto">
-				<div class="tab tab1 active">
-					Видеографы
-				</div>
-				<div class="tab tab2">
-					Авторы подкаста
-				</div>
-				<div class="tab tab3">
-					Художники
-				</div>
-				<div class="tab tab4">
-					Музыканты
-				</div>
-				<div class="tab tab5">
-					Все остальное
-				</div>
+	</div>
+	<div class="main-tariff2">
+		<div class="row-tariff mx-auto">
+			<img src="images/tarif2.svg">
+			<div class="block-taf">
+				<h3>Sky Flow PRO</h3>
+				<h1>Все инструменты для управления подписками</h1>
+				<p>Создайте процветающий бизнес на основе подписки, которая будет приносить ощутамый доход вам и радовать ваших подписчиков.</p>
+				<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
 			</div>
 		</div>
-		<div class="content">
-		  <div class="box show" id="box-1">
-			<img src="images/1/1.svg">
-			<img src="images/1/2.svg">
-			<img src="images/1/3.svg">
-			<img src="images/1/4.svg">
-			<img src="images/1/5.svg">
-		  </div>
-		  <div class="box" id="box-2">
-			<img src="images/2/1.svg">
-			<img src="images/2/2.svg">
-			<img src="images/2/3.svg">
-			<img src="images/2/4.svg">
-			<img src="images/2/5.svg">
-		  </div>
-		  <div class="box" id="box-3">
-			<img src="images/3/1.svg">
-			<img src="images/3/2.svg">
-			<img src="images/3/3.svg">
-			<img src="images/3/4.svg">
-			<img src="images/3/5.svg">
-		  </div>
-		  <div class="box" id="box-4">
-			<img src="images/4/1.svg">
-			<img src="images/4/2.svg">
-			<img src="images/4/3.svg">
-			<img src="images/4/4.svg">
-			<img src="images/4/5.svg">
-		  </div>
-		  <div class="box" id="box-5">
-			<img src="images/5/1.svg">
-			<img src="images/5/2.svg">
-			<img src="images/5/3.svg">
-			<img src="images/5/4.svg">
-			<img src="images/5/5.svg">
-		  </div>
+	</div>
+	<div class="main-tariff3">
+		<div class="row-tariff mx-auto">
+			<img src="images/tarif3.svg">
+			<div class="block-taf">
+				<h3>Sky Flow Premiun</h3>
+				<h1>Для профессионалов креативного бизнеса</h1>
+				<p>Все преимущества тарифа PRO, а также еще больше возможностей для работы с платформой</p>
+				<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
+			</div>
 		</div>
-	  </div>
-
-		<h1 class="siub">Готовы настроить подписку?</h1>
-		<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
-		
 	</div>
 		
 	<!-- <div class="main-layout">
