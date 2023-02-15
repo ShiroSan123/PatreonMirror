@@ -1,3 +1,14 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'Gilroy-regular';
+}
+
+@font-face {
+	font-family: 'Gilroy-regular';
+	src: url('fonts/Gilroy-Regular.ttf');
+}
+
 .main-layout {
 	min-height: 100vh;
 	min-height: 100dvh;
@@ -33,5 +44,16 @@ input {
 @media(min-width: 35em){
 	.contact-form {
 		grid-template-columns: 1fr 1fr;
+	}
+}
+
+h1 {
+	/* Эта установка если ширина экрана > 1920 */
+	font-size: 35px; 
+}
+/* При ширине экрана < 1920 используется формула */
+@media screen and (max-width: 1920px) {
+	h1 {
+		font-size: calc(20px + (35 - 20) * (100vw - 320px) / (1920 - 320));
 	}
 }
