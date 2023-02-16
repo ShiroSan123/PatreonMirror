@@ -1,11 +1,10 @@
 <h1 align="center">Hi there, I'm Renat
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Sky+Flow+team+developer;I+like+coffee+and+cola;I+like+eat;Learning+smth+new)](https://git.io/typing-svg)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ShiroSan123&layout=compact)](https://github.com/ShiroSan123/github-readme-stats)
-
 # MPIT Final 2022
-Наш проект [Развивайся](«Classified») решает проблему отсутствия площадки инициатив НМЕ  у школьников (1-11 класс), родителей и педагогов с помощью информационного сервиса, который имеет возможность записываться на конкурсы, создавать и просмотривать мастер-классы, а так же пользователи смогут обмениваться своими знаниями.
+Наш проект [Sky FLow](«Classified»)
 ***
 Инструменты: SublimeText, Visual Studio Code, Spotify
 ***
