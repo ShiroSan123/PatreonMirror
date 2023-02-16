@@ -18,6 +18,6 @@
 ***
 Языки программирования: PHP, HTML 5, JS, CSS.
 ***
-Хостинг: http://cg26065.tmweb.ru
-Login: cg26065_admin
-Password: admin123
+Хостинг:
+Login:
+Password:
