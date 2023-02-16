@@ -32,9 +32,9 @@ if(isset($_GET['logout'])){
 				<img src="images/Logo.svg" class="logo">
 			</a>
 			<ul>
-				<li><a href="tariff.php">Тарифы</a></li>
-				<li>Для креаторов</li>
-				<li>Цены</li>
+			<li><a href="tariff.php">Тарифы</a></li>
+				<li><a href="Creators.php">Для креаторов</a></li>
+				<li><a href="Price.php">Цены</a></li>
 				<li>Ресурсы</li>
 			</ul>
 		</div>
@@ -43,9 +43,16 @@ if(isset($_GET['logout'])){
 				<img src="images/search.png">
 				<input type="text" placeholder="Найти автора">
 			</div>
-			<div class="nav-user-icon" onclick="settingsMenuToggle()">
-				<img src="images/profiles/1.jpg" alt="">
-			</div>
+			<?php if(empty($_SESSION['username'])) { ?>
+				<ul>
+					<li style="margin-right:10px"><a href="Registration.php">Регистрация</a></li>
+					<li><a href="Login.php">Авторизация</a></li>
+				</ul>
+			<?php } else { ?>
+				<div class="nav-user-icon" onclick="settingsMenuToggle()">
+					<img src="images/profiles/1.jpg" alt="">
+				</div>
+			<?php } ?>
 		</div>
 
 		<!-- Settings-menu -->
@@ -59,8 +66,8 @@ if(isset($_GET['logout'])){
 				<div class="user-profile">
 					<img src="images/profiles/1.jpg" alt="">
 					<div>
-						<p>Renat</p>
-						<a href="profile.php☺">Profile</a>
+						<p><?php echo $_SESSION['username']; ?></p>
+						<a href="profile.php">Profile</a>
 					</div>
 				</div>
 				<hr>
@@ -98,7 +105,7 @@ if(isset($_GET['logout'])){
 				<h3>Sky Flow Lite</h3>
 				<h1>Только самое основное</h1>
 				<p>Простые инструменты для настройки регулярной поддержки от подписчиков и ведения бизнеса на основе подписки.</p>
-				<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
+				<a href="tariff.php"><button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button></a>
 			</div>
 		</div>
 	</div>
@@ -109,7 +116,7 @@ if(isset($_GET['logout'])){
 				<h3>Sky Flow PRO</h3>
 				<h1>Все инструменты для управления подписками</h1>
 				<p>Создайте процветающий бизнес на основе подписки, которая будет приносить ощутамый доход вам и радовать ваших подписчиков.</p>
-				<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
+				<a href="tariff.php"><button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button></a>
 			</div>
 		</div>
 	</div>
@@ -120,7 +127,7 @@ if(isset($_GET['logout'])){
 				<h3>Sky Flow Premiun</h3>
 				<h1>Для профессионалов креативного бизнеса</h1>
 				<p>Все преимущества тарифа PRO, а также еще больше возможностей для работы с платформой</p>
-				<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
+				<a href="tariff.php"><button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button></a>
 			</div>
 		</div>
 	</div>

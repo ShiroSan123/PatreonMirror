@@ -1,4 +1,16 @@
-<?php include('server.php') ?>
+<?php
+session_start();
+
+if(isset($_SESSION['username'])){
+	$_SESSION['msg'] = "You must log in first to view this page";
+}
+
+if(isset($_GET['logout'])){
+	session_destroy();
+	unset($_SESSION['username']);
+	header("location: Login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,15 +22,15 @@
 	<!-- Links -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/style.css?t=<?php echo(microtime(true).rand()); ?>" type="text/css" />
+	<link rel="stylesheet" href="css/style.css?t=<?php echo(microtime(true).rand()); ?>" type="text/css" />
 </head>
 
-<body>
-	<div class="main-layout">
+<body class="body" style="padding: 0;"> 
+	<div class="">
 		<nav class="bob">
 			<div class="nav-left">
 				<a href="index.php">
-					<img src="images/Logo.svg" class="logo">
+					<img src="images/Logo.svg" id="imgLogo" class="logo">
 				</a>
 				<ul>
 					<li><a href="tariff.php">Тарифы</a></li>
@@ -88,41 +100,27 @@
 			</div>
 		</nav>
 
-		<main class="col-10 mx-auto tr text-center">
-			<div class="col-6 mx-auto border regis">
-				<form class="contact-form" action="Registration.php" method="post">
-					<h1>Register</h1>
-
-					<?php include('errors.php') ?>
-
-					<div class="form-group">
-						<input name="username" type="text" placeholder="Username :" required>
+		<main class="creatorsMain">
+			<div class="col-8 mx-auto">
+				<div class="row">
+					<div class="col-8">
+						<h1> <span class="skyes">Sky</span>  Flow для авторов подкастов</h1>
+						<h5>Чтобы создать успешный подкаст, не нужно поступаться своими принципами. Не позволяйте рекламодателям и сетям вещания решать за вас. Развивайте шоу, как вам нравится, заручившись поддержкой преданных слушателей. Подписчики смогут общаться, обсуждать идеи и наблюдать за внутренней кухней подкаста, а у вас будет надежный источник дохода, не зависящий от рекламы.</h5>
+						<a href="tariff.php"><button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button></a>
 					</div>
-
-					<div class="form-group">
-						<input name="email" type="email" placeholder="Email : " required>
+					<div class="col-4">
+						<img src="images/Left-side.svg" class="col-12">
 					</div>
-
-					<div class="form-group">
-						<input name="password_1" type="password" placeholder="Password : " required>
-					</div>
-
-					<div class="form-group">
-						<input name="password_2" type="password" placeholder="Confirm Password : " required>
-					</div>
-
-					<button type="submit" class="btn rounded-pill" name="reg_user">Submit</button>
-
-					<p>Already a user?<a href="Login.php"><b>Log in</b></a></p>
-				</form>
+				</div>
 			</div>
-			
 		</main>
 
-		<footer class="col-12 bg-primary text-center" style="height: 100px;">
-			<p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		<footer class="col-12 text-center footer">
+			<h1 class="text-white">В чём преимущества подписной модели для авторов подкастов</h1>
 		</footer>
 	</div>
+
+	<script src="scripts/script.js"></script>
 </body>
 
 </html>

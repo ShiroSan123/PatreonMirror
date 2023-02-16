@@ -25,16 +25,16 @@ if(isset($_GET['logout'])){
 	<link rel="stylesheet" href="css/style.css?t=<?php echo(microtime(true).rand()); ?>" type="text/css" />
 </head>
 
-<body> 
-	<nav class="border-bottom ">
+<body class="body"> 
+	<nav class="bob">
 		<div class="nav-left">
 			<a href="index.php">
-				<img src="images/Logo.svg" class="logo">
+				<img src="images/Logo.svg" id="imgLogo" class="logo">
 			</a>
 			<ul>
 				<li><a href="tariff.php">Тарифы</a></li>
-				<li>Для креаторов</li>
-				<li>Цены</li>
+				<li><a href="Creators.php">Для креаторов</a></li>
+				<li><a href="Price.php">Цены</a></li>
 				<li>Ресурсы</li>
 			</ul>
 		</div>
@@ -43,9 +43,16 @@ if(isset($_GET['logout'])){
 				<img src="images/search.png">
 				<input type="text" placeholder="Найти автора">
 			</div>
-			<div class="nav-user-icon" onclick="settingsMenuToggle()">
-				<img src="images/profiles/1.jpg" alt="">
-			</div>
+			<?php if(empty($_SESSION['username'])) { ?>
+				<ul>
+					<li style="margin-right:10px"><a href="Registration.php">Регистрация</a></li>
+					<li><a href="Login.php">Авторизация</a></li>
+				</ul>
+			<?php } else { ?>
+				<div class="nav-user-icon" onclick="settingsMenuToggle()">
+					<img src="images/profiles/1.jpg" alt="">
+				</div>
+			<?php } ?>
 		</div>
 
 		<!-- Settings-menu -->
@@ -59,8 +66,8 @@ if(isset($_GET['logout'])){
 				<div class="user-profile">
 					<img src="images/profiles/1.jpg" alt="">
 					<div>
-						<p>Renat</p>
-						<a href="profile.php☺">Profile</a>
+						<p><?php echo $_SESSION['username']; ?></p>
+						<a href="profile.php">Profile</a>
 					</div>
 				</div>
 				<hr>
@@ -93,13 +100,13 @@ if(isset($_GET['logout'])){
 	</nav>
 	<div class="text-center">
 		<h1 class="mt-5">Находите любимых для себя авторов</h1>
-		<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
+		<a href="tariff.php"><button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button></a>
 		<h1>Найдите автора, который вам интересен</h1>
 		<div class="search-box mx-auto mt-4" style="background: #f2f2f2;">
 			<img src="images/search.png">
 			<input type="text" placeholder="Найти автора">
 		</div>
-		<h1 style="margin-top: 100px;">Что такое <span class="text-orange">Sky</span> Flow</h1>
+		<h1 style="margin-top: 100px;">Что такое <span class="skyes">Sky</span> Flow</h1>
 		<p class="col-4 mx-auto">Sky Flow - это платформа для авторов, которые хотят предоставлять доступ к своим работам по подписке и налаживать глубокую связь со своими поклонниками.</p>
 		<div class="col-10 mx-auto">
 			<div class="row skyflow">
@@ -116,7 +123,7 @@ if(isset($_GET['logout'])){
 				</div>
 			</div>
 		</div>
-		<h1 style="margin-top: 100px;">Кто использует Sky flow</h1>
+		<h1 style="margin-top: 100px;">Кто использует <span class="skyes">Sky</span> flow</h1>
 		<h2 class="col-4 mt-4 mx-auto text500">Patreon уже отрыл возможность обрести творческую и финансовую свободу сотням тысяч видеографов, авторов подкастов, музыкантов, писателей, геймеров и других авторов.</h2>
 	
 	<div class="tabs mx-auto x5carousel">
@@ -179,7 +186,7 @@ if(isset($_GET['logout'])){
 	  </div>
 
 		<h1 class="siub">Готовы настроить подписку?</h1>
-		<button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button>
+		<a href="tariff.php"><button class="btn btn-orange start-btn rounded-pill mt-3 text-white">Начать</button></a>
 		
 	</div>
 		

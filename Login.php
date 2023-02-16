@@ -15,12 +15,81 @@
 
 <body>
 	<div class="main-layout">
-		<header class="primary-header bg-primary col-12 bg-blue text-center text-white" style="height: 100px;">
-			
-		</header>
+		<nav class="bob">
+			<div class="nav-left">
+				<a href="index.php">
+					<img src="images/Logo.svg" class="logo">
+				</a>
+				<ul>
+					<li><a href="tariff.php">Тарифы</a></li>
+					<li><a href="Creators.php">Для креаторов</a></li>
+					<li><a href="Price.php">Цены</a></li>
+					<li>Ресурсы</li>
+				</ul>
+			</div>
+			<div class="nav-right">
+				<div class="search-box">
+					<img src="images/search.png">
+					<input type="text" placeholder="Найти автора">
+				</div>
+				<?php if(empty($_SESSION['username'])) { ?>
+					<ul>
+						<li style="margin-right:10px"><a href="Registration.php">Регистрация</a></li>
+						<li><a href="Login.php">Авторизация</a></li>
+					</ul>
+				<?php } else { ?>
+					<div class="nav-user-icon" onclick="settingsMenuToggle()">
+						<img src="images/profiles/1.jpg" alt="">
+					</div>
+				<?php } ?>
+			</div>
+	
+			<!-- Settings-menu -->
+			<div class="settings-menu">
+				<!-- Switch btn -->
+				<div id="dark-btn">
+					<span></span>
+				</div>
+	
+				<div class="settings-menu-inner">
+					<div class="user-profile">
+						<img src="images/profiles/1.jpg" alt="">
+						<div>
+							<p><?php echo $_SESSION['username']; ?></p>
+							<a href="profile.php">Profile</a>
+						</div>
+					</div>
+					<hr>
+					<div class="user-profile">
+						<img src="images/profiles/1.jpg" alt="">
+						<div>
+							<p>Give Feedback</p>
+							<a href="#">Help us to improve the new design</a>
+						</div>
+					</div>
+					<hr>
+					<div class="setting-links">
+						<img src="images/setting.png" class="settings-icon">
+						<a href="#">Setting & Privacy <img src="images/arrow.png" width="10px"></a>
+					</div>
+					<div class="setting-links">
+						<img src="images/help.png" class="settings-icon">
+						<a href="#">Help & Support <img src="images/arrow.png" width="10px"></a>
+					</div>
+					<div class="setting-links">
+						<img src="images/display.png" class="settings-icon">
+						<a href="#">Display & Accessibility <img src="images/arrow.png" width="10px"></a>
+					</div>
+					<div class="setting-links">
+						<img src="images/logout.png" class="settings-icon">
+						<a href="#">Logout <img src="images/arrow.png" width="10px"></a>
+					</div>
+				</div>
+			</div>
+		</nav>
 
 		<main class="col-10 mx-auto tr text-center">
-			<div class="col-6 mx-auto border regis">
+			<div class="col-6 mx-auto border Login">
 				<form class="contact-form" action="Login.php" method="post">
 					<h1>Log In</h1>
 					<div class="form-group">

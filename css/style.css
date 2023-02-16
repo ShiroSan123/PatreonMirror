@@ -3,22 +3,56 @@
 	margin: 0;
 	padding: 0;
 	font-family: 'Gilroy', sans-serif;
+	color: var(--text-color);
 }
 
 :root {
-	--body-color: #efefef;
+	--body-color: #fff;
 	--nav-color: #1876f2;
 	--bg-color: #fff;
+	--dark-header: #fff;
+	--text-color: #000;
+	--active-color: #f14821;
+	--text-danger: #ff424d;
+	--border-color: #DEE2E6;
+	--settings-menu-text-color: #626262;
+	--footer-color: #003457;
+	--hr-color: #e5e3dd;
 }
 
 .dark-theme {
-	--body-color: #0a0a0a;
+	--body-color: #141518;
 	--nav-color: #000;
 	--bg-color: #000;
+	--dark-header: #222222;
+	--text-danger: #ff424d;
+	--text-color: #e0e0e0;
+	--active-color: #0077FF;
+	--border-color: #222222;
+	--settings-menu-text-color: #fff;
+	--hr-color: #141518;
 }
 
-body {
-	background: var(--body-color);
+.body-price {
+	background: var(--hr-color);
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: #9a9a9a;
+	margin: 15px 0;
+}
+
+.footer {
+	background: var(--footer-color);
+	padding: 3%;
+	bottom: 0;
+	position: absolute;
+}
+
+.body {
+	background-color: var(--body-color);
 	transition: background 0.3s;
 	padding-bottom: 20px;
 }
@@ -40,11 +74,24 @@ body {
 		auto;
 }
 
+.skyes {
+	color: var(--active-color);
+}
+
 nav {
+	background: var(--dark-header);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 2%;
+}
+
+.bob {
+	border-bottom: 1px var(--border-color);
+}
+
+.logo-dark {
+	src: url(images/LogoDark.svg);
 }
 
 .logo {
@@ -65,12 +112,26 @@ nav {
 
 .nav-left ul li a {
 	text-decoration: none;
-	color: #000;
+	color: var(--text-color);
+	transition: color 0.4s;
+}
+
+ul {
+	display: flex;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--text-color);
 	transition: color 0.4s;
 }
 
 .nav-left ul li a:hover {
-	color: #f14821;
+	color: var(--active-color);
 }
 
 .nav-user-icon {
@@ -130,6 +191,60 @@ input {
 	border: 1px solid black;
 }
 
+.price3grid {
+	margin-top: 30px;
+}
+
+.colum {
+	width: 26vw;
+	border-radius: 10px;
+	padding: 1%;
+	min-height: 1000px;
+	background-color: var(--body-color);
+	position: relative;
+}
+
+.colum img {
+	transform: translateY(-5px) ;
+	width: 25px;
+	margin-right: 20px;
+}
+
+.colum h1 {
+	margin-bottom: 20px;
+}
+
+.colum .btns {
+	position: absolute;
+	bottom: 5%;
+	left: 36%;
+	display: flex;
+	flex-direction: column;
+}
+
+.namePrice {
+	padding: 2%;
+	min-height: 195px;
+}
+
+.checkMarks {
+	padding: 4%;
+}
+
+.checkMarks h5 {
+	margin-top: 20px;
+}
+
+.proce {
+	padding: 4%;
+}
+
+.proce h1{
+	left: 0;
+	color: var(--text-danger);
+	font-weight: 600;
+}
+
 .user-profile {
 	display: flex;
 	align-items: center;
@@ -159,10 +274,11 @@ input {
 
 /* Settings-menu */
 .settings-menu {
+	z-index: 100;
 	position: absolute;
 	width: 90%;
 	max-width: 350px;
-	background: var(--bg-color);
+	background: var(--body-color);
 	box-shadow: 0 0 5px rgba(0,0,0,0.4);
 	border-radius: 4px;
 	overflow: hidden;
@@ -170,6 +286,10 @@ input {
 	right: 2%;
 	max-height: 0;
 	transition: max-height 0.3s;
+}
+
+.settings-menu a,p{
+	color: var(--settings-menu-text-color);
 }
 
 .settings-menu-height {
@@ -205,7 +325,6 @@ input {
 	align-items: center;
 	justify-content: space-between;
 	text-decoration: none;
-	color: #626262;
 }
 
 #dark-btn {
@@ -241,11 +360,11 @@ input {
 }
 
 .text-orange {
-	color: #f14821;
+	color: var(--active-color);
 }
 
 .btn-orange {
-	background: #f14821;
+	background: var(--active-color);
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
@@ -266,6 +385,7 @@ input {
 	height: 40px;
 	display: flex;
 	align-items: center;
+	background: var(--body-color);
 }
 
 .left {
@@ -314,8 +434,18 @@ svg:hover {
 	height: calc(100% - 40px);
 	position: relative;
 	top: 40px;
-}																									
+}	
+
 .box {
+	padding: 25px;
+	display: flex;
+	position: absolute;
+	opacity: 0;
+	transition: all .3s ease-in;
+	transform: translateY(3px);
+}
+
+.box2 {
 	padding: 25px;
 	display: flex;
 	position: absolute;
@@ -329,7 +459,7 @@ svg:hover {
 }
 
 .active {
-	color: #f14821;
+	color: var(--active-color);
 }
 
 .active svg {
@@ -337,6 +467,12 @@ svg:hover {
 }
 
 .show {
+	transform: translateY(0);
+	transition: all .5s ease-out .4s;
+	opacity: 1;
+}
+
+.show2 {
 	transform: translateY(0);
 	transition: all .5s ease-out .4s;
 	opacity: 1;
@@ -368,7 +504,7 @@ svg:hover {
 .row-tariff .block-taf {
 	padding: 3% 10%;
 	width: 60vw;
-	margin-left: auto;
+	margin-left: auto;	
 }
 
 .row-tariff {
@@ -385,6 +521,20 @@ svg:hover {
 
 .main-tariff3 {
 	background: #002843;
+}
+
+.creatorsMain {
+	min-height: 50vh;
+	padding: 5%;
+}
+
+.creatorsMain img{
+	width: 500px;
+}
+
+.creatorsMain h1{
+	margin-bottom: 50px;
+	font-size: calc(20px + (55 - 20) * (100vw - 320px) / (1920 - 320));
 }
 
 p {

@@ -1,6 +1,12 @@
 var settingsMenu = document.querySelector(".settings-menu");
 var darkBtn = document.getElementById("dark-btn");
 
+let startBtn = document.querySelectorAll(".start-btn");
+
+startBtn.onclick = function() {
+	window.location.href = 'tariff.php';
+}
+
 function settingsMenuToggle() {
 	settingsMenu.classList.toggle("settings-menu-height");
 }
@@ -8,11 +14,18 @@ function settingsMenuToggle() {
 darkBtn.onclick = function() {
 	darkBtn.classList.toggle("dark-btn-on");
 	document.body.classList.toggle("dark-theme");
+	logo = document.querySelector(".logo");
 
 	if(localStorage.getItem("theme") == "light") {
 		localStorage.setItem("theme","dark");
 	} else {
 		localStorage.setItem("theme","light");
+	}
+
+	if (document.getElementById("imgLogo").src == "images/Logo.svg"){
+		document.getElementById("imgLogo").src = "images/LogoDark.svg";
+	} else {
+		document.getElementById("imgLogo").src = "images/Logo.svg";
 	}
 }
 

@@ -1,4 +1,16 @@
-<?php include('server.php') ?>
+<?php
+session_start();
+
+if(isset($_SESSION['username'])){
+	$_SESSION['msg'] = "You must log in first to view this page";
+}
+
+if(isset($_GET['logout'])){
+	session_destroy();
+	unset($_SESSION['username']);
+	header("location: Login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,15 +22,15 @@
 	<!-- Links -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/style.css?t=<?php echo(microtime(true).rand()); ?>" type="text/css" />
+	<link rel="stylesheet" href="css/style.css?t=<?php echo(microtime(true).rand()); ?>" type="text/css" />
 </head>
 
-<body>
-	<div class="main-layout">
+<body class="body-price" style="padding: 0; padding-bottom: 5%;"> 
+	<div class="">
 		<nav class="bob">
 			<div class="nav-left">
 				<a href="index.php">
-					<img src="images/Logo.svg" class="logo">
+					<img src="images/Logo.svg" id="imgLogo" class="logo">
 				</a>
 				<ul>
 					<li><a href="tariff.php">Тарифы</a></li>
@@ -87,42 +99,10 @@
 				</div>
 			</div>
 		</nav>
+		<h1 class="text-center"><?php echo $_SESSION['username'] ?></h1>
 
-		<main class="col-10 mx-auto tr text-center">
-			<div class="col-6 mx-auto border regis">
-				<form class="contact-form" action="Registration.php" method="post">
-					<h1>Register</h1>
 
-					<?php include('errors.php') ?>
-
-					<div class="form-group">
-						<input name="username" type="text" placeholder="Username :" required>
-					</div>
-
-					<div class="form-group">
-						<input name="email" type="email" placeholder="Email : " required>
-					</div>
-
-					<div class="form-group">
-						<input name="password_1" type="password" placeholder="Password : " required>
-					</div>
-
-					<div class="form-group">
-						<input name="password_2" type="password" placeholder="Confirm Password : " required>
-					</div>
-
-					<button type="submit" class="btn rounded-pill" name="reg_user">Submit</button>
-
-					<p>Already a user?<a href="Login.php"><b>Log in</b></a></p>
-				</form>
-			</div>
-			
-		</main>
-
-		<footer class="col-12 bg-primary text-center" style="height: 100px;">
-			<p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		</footer>
-	</div>
+	<script src="scripts/script.js"></script>
 </body>
 
 </html>
